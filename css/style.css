@@ -1,0 +1,151 @@
+form {
+    margin: 0 auto;
+    width: 350px;
+    padding: 20px;
+    border: 2px solid black;
+    background:gray;
+    color:black;
+    font-size: 120%;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background: -moz-linear-gradient(19% 75% 90deg, white, gray);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(gray));
+    -moz-box-shadow:0px -5px 300px gray;
+    -webkit-box-shadow:0px -5px 300px hray;
+    text-align: left;
+}
+
+form table {
+    width: 100%;
+}
+
+input {
+    background: white;
+    width: 150px;
+    padding: 6px;
+    margin:0 auto;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+.button {
+    width: 165px;
+    background:gray;
+}
+
+.note {
+    font-size: 80%;
+}
+
+
+body {
+    background:#252525 url('../img/bg.png') repeat;
+    font-family: 'Cabin Condensed', sans-serif;
+    color: white;
+}
+
+#content {
+    margin: 0 auto;
+    text-align: center;
+    width:600px;
+}
+
+a {
+ color: white; /*The color of the link*/
+ text-decoration: underline;
+}
+a:visited {
+ color: white; /*The color of the visited link*/
+ text-decoration: underline;
+}
+a:hover {
+ color: white; /*The color of the mouseover or 'hover' link*/
+ text-decoration: underline;
+}
+
+caption, th, td {
+font-weight:normal;
+text-align:left;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+content:"";
+}
+blockquote, q {
+quotes:"" "";
+}
+a{
+cursor: pointer;
+}
+br.both{
+clear:both;
+}
+#backgroundPopup{
+display:none;
+position:fixed;
+_position:absolute; /* hack for internet explorer 6*/
+height:100%;
+width:100%;
+top:0;
+left:0;
+background:#000000;
+border:1px solid #cecece;
+z-index:1;
+}
+#popupContact{
+display:none;
+position:fixed;
+_position:absolute; /* hack for internet explorer 6*/
+height:384px;
+width:408px;
+background:#FFFFFF;
+border:2px solid #cecece;
+z-index:2;
+padding:12px;
+font-size:13px;
+}
+#popupContact a{
+color: black;
+}
+#popupContact h1{
+text-align:left;
+color:black;
+font-size:22px;
+font-weight:700;
+border-bottom:1px dotted #000;
+padding-bottom:2px;
+margin-bottom:20px;
+}
+#popupContactClose{
+font-size:14px;
+line-height:14px;
+right:6px;
+top:4px;
+position:absolute;
+color:#000;
+font-weight:700;
+display:block;
+}
+#button{
+text-align:center;
+margin:20px;
+}
+#contactArea{
+color: black;
+}
+
+#loadingPopup {
+    display:none; 
+}
+
+#backgroundLoading{
+display:none;
+position:fixed;
+_position:absolute; /* hack for internet explorer 6*/
+height:100%;
+width:100%;
+top:0;
+left:0;
+background:#000000;
+border:1px solid #cecece;
+z-index:1;
+}
