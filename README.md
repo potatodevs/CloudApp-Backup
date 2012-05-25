@@ -1,5 +1,8 @@
 # cloudapp-exporter
 
+Application to let you download all your uploaded files on CloudApp in one .zip file.
+
+
 ## Install instructions
 
 1. Copy all files and folders to FTP
