@@ -50,14 +50,13 @@ foreach ($files as $file) {
             if (!is_file($folder . '/' . $file)) echo "Deleted file: ".$file. "\n";
         }
     }
-    /*if (is_dir($folder . '/' . $file)) {
-        echo $folder . '/' . $file;
+    if ($file != "." && $file != ".." && is_dir($folder . '/' . $file)) {
         $time = dirmtime($folder . '/' . $file);
-        if ($time < (time() - 30)) {
+        if ($time < (time() - 3600)) {
             @rrmdir($folder . '/' . $file); // intentionally @
             if (!is_dir($folder . '/' . $file)) echo "Deleted folder: ".$file. "\n";
         }
-    } */   
+    }   
 }
 
 // All done

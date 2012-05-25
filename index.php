@@ -61,10 +61,10 @@ if ($form->isSubmitted() && $form->isValid()) {
         // we dont want bookmarks, just files
         foreach ($all_items as $item) {
             if ($item->item_type != "bookmarks" && !empty ($item->remote_url)) {
-                //copy($item->remote_url, $folder . '/' . $item->id . '-' . $item->name);
-                $content = file_get_contents($item->remote_url);
-                file_put_contents($folder . '/' . $item->id . '-' . $item->name, $content);                
-                unset($content);
+                copy($item->remote_url, $folder . '/' . $item->id . '-' . $item->name);
+                //$content = file_get_contents($item->remote_url);
+                //file_put_contents($folder . '/' . $item->id . '-' . $item->name, $content);                
+                //unset($content);
                 $file = array();
                 $file['path'] = $folder . '/' . $item->id . '-' . $item->name;
                 $file['name'] = $item->id . '-' . $item->name;
@@ -86,7 +86,7 @@ if ($form->isSubmitted() && $form->isValid()) {
             $template->registerHelperLoader('Nette\Templating\DefaultHelpers::loader');
             $template->registerFilter(new Nette\Latte\Engine);
             $template->id = $id;
-            $template->url = 'http://www.project135.com/generated/' . $name;
+            $template->url = 'http://cloudappexporter.project135.com/generated/' . $name;
             $template->render();              
         }
         else {
