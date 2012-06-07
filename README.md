@@ -1,17 +1,15 @@
-# cloudapp-exporter
+# CloudApp-Exporter
 
-Application to let you download all your uploaded files on CloudApp in one .zip file.
-
+Simple app which allows you to download all your data from CloudApp in one .zip file.
 
 ## Install instructions
 
 1. Copy all files and folders to FTP
-2. Make folders "log" and "generated" writable (chmod 777)
+2. Make folders "log", "generated" and "temp" an writable (chmod 0777)
 3. Set up cron task to /cron.php (aprox. every hour)
-4. In file "index.php" on line 84 update url to root folder of the app
 
 ## Some extra info
 
-/generated folder is used for generated .zip user files.
-
-/log folder is used for for any errors that we may come across.
+- "generated" folder is used for generated .zip user files.
+- "log" folder is used for automatic logging of all errors.
+- "temp" folder is as a cache for templating system.

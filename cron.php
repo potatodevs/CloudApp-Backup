@@ -21,7 +21,7 @@ function dirmtime($dir) {
     $iterator = new DirectoryIterator($dir);
 
     $mtime = -1;
-    $file;
+    $file = null;
     foreach ($iterator as $fileinfo) {
         if ($fileinfo->isFile()) {
             if ($fileinfo->getMTime() > $mtime) {

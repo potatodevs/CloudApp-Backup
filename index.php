@@ -22,6 +22,11 @@ Debugger::$strictMode = TRUE;
 Debugger::$logDirectory = __DIR__ . '/log';
 Debugger::enable();
 
+$configurator = new Nette\Config\Configurator;
+$configurator->setTempDirectory(__DIR__ . '/temp');
+$container = $configurator->createContainer();
+$httpRequest = $container->getService('httpRequest');
+
 $form = new Form;
 
 $form->addText('login', 'CloudApp e-mail:')
@@ -82,11 +87,12 @@ if ($form->isSubmitted() && $form->isValid()) {
             rrmdir($folder);            
             
             // inputs link to the archive
-            $template = new FileTemplate('done.latte');
-            $template->registerHelperLoader('Nette\Templating\DefaultHelpers::loader');
+            $template = new FileTemplate(__DIR__ . '/templates/done.latte');
+	    $template->registerHelperLoader('Nette\Templating\Helpers::loader');
             $template->registerFilter(new Nette\Latte\Engine);
             $template->id = $id;
-            $template->url = 'http://cloudappexporter.project135.com/generated/' . $name;
+	    $template->url = $httpRequest->getUrl()->baseUrl;
+            $template->name = $name;
             $template->render();              
         }
         else {
@@ -94,26 +100,29 @@ if ($form->isSubmitted() && $form->isValid()) {
             rrmdir($folder);            
             
             // shows message that there is nothing to download
-            $template = new FileTemplate('down.latte');
-            $template->registerHelperLoader('Nette\Templating\DefaultHelpers::loader');
+            $template = new FileTemplate(__DIR__ . '/templates/down.latte');
+            $template->registerHelperLoader('Nette\Templating\Helpers::loader');
             $template->registerFilter(new Nette\Latte\Engine);
+	    $template->url = $httpRequest->getUrl()->baseUrl;
             $template->render();              
         }
     }
     catch (Cloud_Exception $e) {
         // show error
-        $template = new FileTemplate('error.latte');
-        $template->registerHelperLoader('Nette\Templating\DefaultHelpers::loader');
+        $template = new FileTemplate(__DIR__ . '/templates/error.latte');
+        $template->registerHelperLoader('Nette\Templating\Helpers::loader');
         $template->registerFilter(new Nette\Latte\Engine);
         $template->form = $form;
+	$template->url = $httpRequest->getUrl()->baseUrl;
         $template->render();                
     }
 
 } else {
     // show login form
-    $template = new FileTemplate('form.latte');
-    $template->registerHelperLoader('Nette\Templating\DefaultHelpers::loader');
+    $template = new FileTemplate(__DIR__ . '/templates/form.latte');
+    $template->registerHelperLoader('Nette\Templating\Helpers::loader');
     $template->registerFilter(new Nette\Latte\Engine);
     $template->form = $form;
+    $template->url = $httpRequest->getUrl()->baseUrl;
     $template->render();
 }    

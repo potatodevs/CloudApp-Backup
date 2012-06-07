@@ -1,47 +1,10 @@
-form {
-    margin: 0 auto;
-    width: 350px;
-    padding: 20px;
-    border: 2px solid black;
-    background:gray;
-    color:black;
-    font-size: 120%;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    background: -moz-linear-gradient(19% 75% 90deg, white, gray);
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(gray));
-    -moz-box-shadow:0px -5px 300px gray;
-    -webkit-box-shadow:0px -5px 300px hray;
-    text-align: left;
-}
-
-form table {
-    width: 100%;
-}
-
-input {
-    background: white;
-    width: 150px;
-    padding: 6px;
-    margin:0 auto;
-    margin-bottom: 10px;
-    border: 1px solid black;
-}
-
-.button {
-    width: 165px;
-    background:gray;
-}
-
-.note {
-    font-size: 80%;
-}
-
-
 body {
-    background:#252525 url('../img/bg.png') repeat;
-    font-family: 'Cabin Condensed', sans-serif;
-    color: white;
+    background:#CBCBCB url('../img/bg.png') repeat;
+    font-family: 'Helvetica Neue', Helvetica, Arial Geneva, sans-serif;
+    color: black;
+    font-size: 13px;
+    -webkit-font-smoothing: antialiased;
+    position:relative;
 }
 
 #content {
@@ -50,102 +13,161 @@ body {
     width:600px;
 }
 
-a {
- color: white; /*The color of the link*/
- text-decoration: underline;
-}
-a:visited {
- color: white; /*The color of the visited link*/
- text-decoration: underline;
-}
-a:hover {
- color: white; /*The color of the mouseover or 'hover' link*/
- text-decoration: underline;
+h1, h1 a, h1 a:hover, h1 a:visited {
+    color:#636C75;
+    font-size: 22px;
+    font-weight: normal;
+    cursor: pointer;
 }
 
-caption, th, td {
-font-weight:normal;
-text-align:left;
+h1 a, h1 a:hover, h1 a:visited {
+    cursor: pointer;
+    text-decoration: none;
 }
-blockquote:before, blockquote:after, q:before, q:after {
-content:"";
+
+h2 {
+    color:grey;
+    font-size: 16px;
+    font-weight: normal;
+    margin:0 auto;
+    text-align: left;
+    width: 400px;
 }
-blockquote, q {
-quotes:"" "";
+
+a {
+    color:#636C75;
+    text-decoration: underline;
 }
-a{
-cursor: pointer;
+a:visited {
+    color:#636C75;
+    text-decoration: underline;
 }
-br.both{
-clear:both;
+a:hover {
+    color:#636C75;
+    text-decoration: underline;
 }
-#backgroundPopup{
-display:none;
-position:fixed;
-_position:absolute; /* hack for internet explorer 6*/
-height:100%;
-width:100%;
-top:0;
-left:0;
-background:#000000;
-border:1px solid #cecece;
-z-index:1;
+
+form, #about, .box {
+    margin: 0 auto;
+    width: 350px;
+    background: white;
+    text-align: left;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    -moz-box-shadow: 0 1px 2px #B3B3B3;
+    -webkit-box-shadow: 0 1px 2px #B3B3B3;
+    box-shadow: 0 1px 2px #B3B3B3;
+    margin: 10px auto 0 auto;
+    padding: 25px;  
 }
-#popupContact{
-display:none;
-position:fixed;
-_position:absolute; /* hack for internet explorer 6*/
-height:384px;
-width:408px;
-background:#FFFFFF;
-border:2px solid #cecece;
-z-index:2;
-padding:12px;
-font-size:13px;
+
+input.text{
+    width: 338px;
+    border: 1px solid #ccc;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 0 3px #80bfff, 0 1px 2px rgba(0, 0, 0, .15) inset;
+    -webkit-box-shadow: 0 0 3px #80bfff, 0 1px 2px rgba(0, 0, 0, .15) inset;
+    box-shadow: 0 0 3px #80bfff, 0 1px 2px rgba(0, 0, 0, .15) inset;
+    color: #424242;
+    font-size: 13px;
+    outline: none;
+    padding: 6px;
+    -moz-transition: border .2s linear, box-shadow .2s linear;
+    -webkit-transition: border .2s linear, -webkit-box-shadow .2s linear;
+    margin-bottom: 15px;
+  }
+
+ input.text:focus {
+    border: 1px solid #80bfff;
+    -moz-box-shadow: 0 0 3px #80bfff, 0 1px 2px rgba(0, 0, 0, .15) inset;
+    -webkit-box-shadow: 0 0 3px #80bfff, 0 1px 2px rgba(0, 0, 0, .15) inset;
+    box-shadow: 0 0 3px #80bfff, 0 1px 2px rgba(0, 0, 0, .15) inset;
+  }
+
+label {
+    font-size: 13px;
+    margin:0 0 5px 0;
+    display: block;
+    font-weight: bold;
 }
-#popupContact a{
-color: black;
+
+.button {
+    text-decoration: none;
+    background: #eaeaea;
+    border: 1px solid #ababab;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .1), 0 1px 1px rgba(255, 255, 255, .8) inset;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .1), 0 1px 1px rgba(255, 255, 255, .8) inset;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1), 0 1px 1px rgba(255, 255, 255, .8) inset;
+    color: #707070;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    margin: 0;
+    outline: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, .5);
 }
-#popupContact h1{
-text-align:left;
-color:black;
-font-size:22px;
-font-weight:700;
-border-bottom:1px dotted #000;
-padding-bottom:2px;
-margin-bottom:20px;
+
+#footer {
+    width: 400px;
+    margin:5px auto 5px auto;
+    font-size: 100%;
+    text-align: left;
 }
-#popupContactClose{
-font-size:14px;
-line-height:14px;
-right:6px;
-top:4px;
-position:absolute;
-color:#000;
-font-weight:700;
-display:block;
+
+#footer a {
+    float:right;
+    display: block;
 }
-#button{
-text-align:center;
-margin:20px;
-}
-#contactArea{
-color: black;
-}
+
+/* Loading animation when fetching the data */
 
 #loadingPopup {
     display:none; 
 }
 
-#backgroundLoading{
-display:none;
-position:fixed;
-_position:absolute; /* hack for internet explorer 6*/
-height:100%;
-width:100%;
-top:0;
-left:0;
-background:#000000;
-border:1px solid #cecece;
-z-index:1;
+#backgroundLoading {
+    display:none;
+    position:fixed;
+    _position:absolute; /* !IE6*/
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    background:white;
+    border:1px solid #cecece;
+    z-index:1;
+}
+
+/* About popup */
+
+#aboutPopup {
+    position:absolute;
+    display: none;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    padding-top: 30px;
+}
+
+#aboutPopup a.button, #aboutPopup a.button:hover {
+    margin-top:20px;
+    margin-bottom: -20px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    width: 100px;
+}
+
+#about a, #about a:hover, #about a:visited {
+    text-decoration: none;
 }
