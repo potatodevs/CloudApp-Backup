@@ -1,0 +1,14 @@
+{layout '@layout.latte'}
+
+{block #content}
+
+ <h2><span n:block="title">Something went wrong</span>. You've probably entered wrong credentials. Shame on you!</h2>
+{form $form}
+    {label login /}
+    {input login class => 'text', placeholder => 'email@example.com' }
+
+    {label password /}
+    {input password class => 'text' }
+
+    {input download class => 'button' }
+{/form}

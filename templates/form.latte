@@ -1,0 +1,14 @@
+{layout '@layout.latte'}
+
+{block #content}
+
+<h2>Please enter your credentials.</h2>
+{form $form}
+    {label login /}
+    {input login class => 'text', placeholder => 'email@example.com' }
+
+    {label password /}
+    {input password class => 'text' }
+
+    {input download class => 'button' }
+{/form}
