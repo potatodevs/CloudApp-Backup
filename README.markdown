@@ -21,4 +21,4 @@ Simple app written in PHP which allows you to download all your data from [*Clou
 - *PHP >= 5.3* (see more at [http://doc.nette.org/en/requirements](http://doc.nette.org/en/requirements))
 
 ## License
-See `LICENSE.md`.
+See `LICENSE.markdown`.
